@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://betaflight.com/blog</id>
     <title>Betaflight News</title>
-    <updated>2023-12-15T19:34:13.000Z</updated>
+    <updated>2023-12-16T20:19:04.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://betaflight.com/blog"/>
     <subtitle>Betaflight Blog</subtitle>
@@ -12,7 +12,7 @@
         <title type="html"><![CDATA[HQProp - Betaflight Development Team Sponsor.]]></title>
         <id>https://betaflight.com/blog/HQProp - Development Team Sponsor Review</id>
         <link href="https://betaflight.com/blog/HQProp - Development Team Sponsor Review"/>
-        <updated>2023-12-15T19:34:13.000Z</updated>
+        <updated>2023-12-16T20:19:04.000Z</updated>
         <summary type="html"><![CDATA[Founded in 2012, HQProp are devoted to supplying the RC community with High Quality props. This brand has been fundamental to the development of the FPV quadcopter hobby by producing cutting edge designs over the whole range of drone size and uses, and they are a popular choice in the Betaflight development team.]]></summary>
         <content type="html"><![CDATA[<p>Founded in 2012, HQProp are devoted to supplying the RC community with High Quality props. This brand has been fundamental to the development of the FPV quadcopter hobby by producing cutting edge designs over the whole range of drone size and uses, and they are a popular choice in the Betaflight development team.</p>
 <p>We are therefore delighted to partner with them as an offical Betaflight Team Sponsor.</p>
@@ -32,7 +32,7 @@
         <title type="html"><![CDATA[New Speed Record for “Fastest ground speed by a battery-powered remote-controlled (RC) quadcopter.”]]></title>
         <id>https://betaflight.com/blog/New World Record for Fastest Drone</id>
         <link href="https://betaflight.com/blog/New World Record for Fastest Drone"/>
-        <updated>2023-12-15T19:34:13.000Z</updated>
+        <updated>2023-12-16T20:19:04.000Z</updated>
         <summary type="html"><![CDATA[Its simply a case of "ICYMI". Yes folks Betaflight, albeit an earlier version than current, was the firmware behind the most recent record breaking success story for the “Fastest ground speed by a battery-powered remote-controlled (RC) quadcopter.”.]]></summary>
         <content type="html"><![CDATA[<p>Its simply a case of "ICYMI". Yes folks Betaflight, albeit an earlier version than current, was the firmware behind the most recent record breaking success story for the “Fastest ground speed by a battery-powered remote-controlled (RC) quadcopter.”.</p>
 <p>The Guinness World Records has granted the title to Ryan Lademann (USA), using his custom built drone called the XLR V3 Red. This drone powered its way to the record books by hitting 224mph (360kmh). Yes thats right folks this drone nearly hit 200knots (195knots). Many light aircraft would love to reach those speeds. The record attempt was made in Scottsdale, Arizona, USA, on 8 November 2022. What a way to finish out the year.</p>
