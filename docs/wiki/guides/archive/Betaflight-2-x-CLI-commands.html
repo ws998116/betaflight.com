@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-wiki/guides/archive/Betaflight-2-x-CLI-commands" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.0.1">
+<title data-rh="true">Betaflight 2.x CLI commands | Betaflight</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://betaflight.com/docs/wiki/guides/archive/Betaflight-2-x-CLI-commands"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Betaflight 2.x CLI commands | Betaflight"><meta data-rh="true" name="description" content="These settings are specific to betaflight 2.x. For cleanflight CLI docs go here"><meta data-rh="true" property="og:description" content="These settings are specific to betaflight 2.x. For cleanflight CLI docs go here"><meta data-rh="true" property="og:image" content="https://vitroidfpv.com/og-bf?title=Betaflight 2.x CLI commands&amp;description=These settings are specific to betaflight 2.x. For cleanflight CLI docs go here"><meta data-rh="true" name="twitter:image" content="https://vitroidfpv.com/og-bf?title=Betaflight 2.x CLI commands&amp;description=These settings are specific to betaflight 2.x. For cleanflight CLI docs go here"><link data-rh="true" rel="icon" href="/img/betaflight/icon_light.svg"><link data-rh="true" rel="canonical" href="https://betaflight.com/docs/wiki/guides/archive/Betaflight-2-x-CLI-commands"><link data-rh="true" rel="alternate" href="https://betaflight.com/docs/wiki/guides/archive/Betaflight-2-x-CLI-commands" hreflang="en"><link data-rh="true" rel="alternate" href="https://betaflight.com/docs/wiki/guides/archive/Betaflight-2-x-CLI-commands" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Betaflight News RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Betaflight News Atom Feed">
+<link rel="alternate" type="application/json" href="/blog/feed.json" title="Betaflight News JSON Feed">
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/assets/css/styles.7ea3a00f.css">
+<script src="/assets/js/runtime~main.4f9afd79.js" defer="defer"></script>
+<script src="/assets/js/main.c41cd962.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return localStorage.getItem("theme")}catch(t){}}();null!==e?t(e):window.matchMedia("(prefers-color-scheme: dark)").matches?t("dark"):window.matchMedia("(prefers-color-scheme: light)").matches?t("light"):t("dark")}(),function(){try{const c=new URLSearchParams(window.location.search).entries();for(var[t,e]of c)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/betaflight/icon_light.svg" alt="Betaflight Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/betaflight/icon_dark.svg" alt="Betaflight Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate">Betaflight</b></a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/docs/wiki">Wiki</a><a class="navbar__item navbar__link" href="/docs/development">Development</a><a class="navbar__item navbar__link" href="/download">Download</a><a class="navbar__item navbar__link" href="/stats">Stats</a><a class="navbar__item navbar__link" href="/docs/relations/sponsors">Relations</a><a class="navbar__item navbar__link" href="/blog">Blog</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/betaflight/betaflight" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link">Feeds</a><ul class="dropdown__menu"><li><a class="dropdown__link" target="_blank" href="/blog/rss.xml">RSS</a></li><li><a class="dropdown__link" target="_blank" href="/blog/atom.xml">Atom</a></li><li><a class="dropdown__link" target="_blank" href="/blog/feed.json">Json</a></li></ul></div><div class="toggle_MW0i colorModeToggle_DEke"><button class="clean-btn toggleButton_yw5v toggleButtonDisabled_BJd7" type="button" disabled="" title="Switch between dark and light mode (currently dark mode)" aria-label="Switch between dark and light mode (currently dark mode)" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_SFTY"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><div class="navbar__search"><input id="search_input_react" type="search" placeholder="Loading..." aria-label="Search" class="navbar__search-input search-bar" disabled=""></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/wiki">Welcome!</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/docs/wiki/getting-started">Getting started</a><button aria-label="Expand sidebar category &#x27;Getting started&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/docs/wiki/release/Betaflight-4.5-Release-Notes">Release Notes</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" aria-expanded="false" href="/docs/wiki/tuning/4.3-Tuning-Notes">Tuning Notes</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" aria-expanded="true" href="/docs/wiki/guides">Guides</a><button aria-label="Collapse sidebar category &#x27;Guides&#x27;" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" tabindex="0" href="/docs/category/current">Current</a><button aria-label="Expand sidebar category &#x27;Current&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-2 menu__list-item"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--active" aria-expanded="true" tabindex="0" href="/docs/category/archive">Archive</a><button aria-label="Collapse sidebar category &#x27;Archive&#x27;" type="button" class="clean-btn menu__caret"></button></div><ul style="display:block;overflow:visible;height:auto" class="menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" tabindex="0" href="/docs/wiki/guides/archive/Betaflight-2-x-CLI-commands">Betaflight 2.x CLI commands</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/wiki/guides/archive/Betaflight-Merchandise">Official Betaflight T-Shirts and Hoodies!</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/wiki/guides/archive/DSHOT-ESC-Protocol-3-1">Dshot &amp; BetaFlight 3.1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/wiki/guides/archive/ESC-pass-through-3-1">ESC pass-through</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/wiki/guides/archive/Failsafe-Before-4-3">Failsafe Before 4.3</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/wiki/guides/archive/GPS-Rescue-Mode">GPS Rescue before V4.1</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/wiki/guides/archive/Spektrum-Rx-setup">How to setup Spektrum Serial Receivers</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/wiki/guides/archive/Spektrum-SPM4649T-SRXL-Telemetry-setup">Howto setup Spektrum SPM4649T SRXL Telemetry</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/wiki/guides/archive/Spektrum-Satellite-Bind-for-3.2">Spektrum Satellite Bind 3.2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/wiki/guides/archive/Spektrum-and-RC-Smoothing-Filter">Spektrum and RC Smooting Filter</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/wiki/guides/archive/Unified-Targets">Unified Targets for 4.2</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/wiki/guides/archive/failsafe-old">Failsafe notes (Old)</a></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-3 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/wiki/guides/archive/wiki-welcome-old">Wiki welcome (Old)</a></li></ul></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link" tabindex="0" href="/docs/wiki/guides/Gyro-And-Dterm-Filtering-Recommendations-3-1">Gyro and Dterm Filtering Recommendations 3.1</a></li></ul></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/docs/category/configurator">Configurator</a><button aria-label="Expand sidebar category &#x27;Configurator&#x27;" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" aria-expanded="false" href="/docs/category/boards">Boards</a><button aria-label="Expand sidebar category &#x27;Boards&#x27;" type="button" class="clean-btn menu__caret"></button></div></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_z5aJ"><div class="docItemContainer_c0TR"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/wiki/guides"><span itemprop="name">Guides</span></a><meta itemprop="position" content="1"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item"><a class="breadcrumbs__link" itemprop="item" href="/docs/category/archive"><span itemprop="name">Archive</span></a><meta itemprop="position" content="2"></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Betaflight 2.x CLI commands</span><meta itemprop="position" content="3"></li></ul></nav><div class="gap-2 flex flex-col"></div><div class="theme-doc-markdown markdown"><h1>Betaflight 2.x CLI commands</h1>
+<div class="theme-admonition theme-admonition-note admonition_xJq3 alert alert--secondary"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 14 16"><path fill-rule="evenodd" d="M6.3 5.69a.942.942 0 0 1-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 0 1-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z"></path></svg></span>note</div><div class="admonitionContent_BuS1"><p>These settings are specific to betaflight 2.x. For cleanflight CLI docs go here
+<a href="https://github.com/cleanflight/cleanflight/blob/master/docs/Cli.md" target="_blank" rel="noopener noreferrer">https://github.com/cleanflight/cleanflight/blob/master/docs/Cli.md</a></p></div></div>
+<p></p><h4>Note: This Wiki Page covers the CLI Command changes for BetaFlight Version 2.x. </h4><br>
+<!-- -->New <a href="https://github.com/martinbudden/betaflight/tree/master/docs" target="_blank" rel="noopener noreferrer">Docs</a> for BetaFlight 2.x.<p></p>
+<p>Follow these links for the new CLI commands for <a href="/docs/wiki/release/older/Betaflight-3.0-Release-Notes">BetaFlight 3.0.x</a> and <a href="/docs/wiki/release/older/Betaflight-3.1-Release-Notes">BetaFlight 3.1.x</a>.</p>
+<p>The setting shown are the Defaults + possible values.</p>
+<p></p><h3>GET command</h3>
+New CLI feature is type a &quot;get&quot; and part of a CLI command name (example: &quot;get acc&quot;). The cli will return all CLI commands that have the name part with the current value plus what the valid value range or valid Names.
+Unknown on which Version this was added but is in v2.6.1<br>
+<!-- -->This is a very handy feature and allows easy to find variable names that can then be copy/pasted from the CLI display to the command line entry box.<p></p>
+<p><code>set roll_yaw_cam_mix_degrees = 0</code><br>
+<i>[0..50]</i><br>
+Need feedback about proof of concept feature for mixing of roll and yaw to FPV cam angle. <code>set roll_yaw_cam_mix_degrees = &lt;degrees&gt;</code></p>
+<br>
+<p>Here a good preview for this option: [<a href="https://youtu.be/gXeaINFpvow" target="_blank" rel="noopener noreferrer">https://youtu.be/gXeaINFpvow</a> FPV camera tilt compensation]</p>
+<p>Another video on this option: [<a href="https://www.youtube.com/watch?v=gEcWxHIH378" target="_blank" rel="noopener noreferrer">https://www.youtube.com/watch?v=gEcWxHIH378</a> Betaflight Camera Uptilt Compensation]</p>
+<p>Note that in newer BF versions, you need to enable a flight mode for &#x27;FPV ANGLE MIX&#x27; on the modes tab to make the mixing work. You can either define a switch to switch FPV cam angle mixing on and off OR you can set the full range of any switch to keep it permanently on.</p>
+<p><code>set gyro_lpf = 188HZ</code> <br>
+<i>[OFF,188HZ,98HZ,42HZ,EXPERIMENTAL(2.5.0)]</i> See [[Gyro &amp; Dterm filtering recommendations]] for more information.</p>
+<p>This is the internal gyro filtering value. The lower the value the more buffering and delay will be introduced to gyro. Must be set to OFF to enable 2K mode (starting with Version 2.3.0)(starting with Version 2.4 this is automatically set to OFF if 500 looptime is selected in the GUI)&#x27;&#x27;</p>
+<p>(F1 boards must disable accelerometer with set acc_hardware = 1 and in case there are other sensors on board like baro and mag disable those too. set mag_hardware = 1 and set baro_hardware = 1) Disabling any level modes
+Hardware lowpass filter for gyro. Allowed values depend on the driver - For example MPU6050 allows 5,10,20,42,98,188,256Hz, while MPU3050 doesn&#x27;t allow 5Hz. If you have to set gyro lpf below 42Hz generally means the frame is vibrating too much, and that should be fixed first. Values outside of supported range will usually be ignored by drivers, and will configure lpf to default value of 42Hz.</p>
+<p>Boris said:</p>
+<p>gyro_lpf = OFF basically still means there is a little bit of filtering on the gyro.
+When setting it to EXPERIMENTAL it will remove any possible filtering and give raw data, which is extremely noisy. I don&#x27;t recommend it. I just added it to be there in case someone wants to play with it.</p>
+<p>For V2.4.0 and above- see the set gyro_sync_denom CLI command below.</p>
+<p>(starting with Version 2.4 the following hardware is automatically set to NONE on F1 boards if 500usec looptime is selected in the GUI)</p>
+<p>set acc_hardware = 0 (default on) (must be set to 1 for 2K mode on F1 targets)<br>
+<i>[0,...,9] (from 2.4.0 [AUTO,NONE,...])</i><br>
+Sets the accelerometer 0 means auto detect, 1 means NONE, 2 for ADXL345, 3 for MPU6050 integrated accelerometer, 4 for MMA8452, 5 for BMA280, 6 for LSM303DLHC, 7 for MPU6000, 8 for MPU6500</p>
+<p>NB - There&#x27;s an issue with configurator that means the gyro icon goes dark when you disable the accelerometer - it&#x27;s here: <a href="https://github.com/cleanflight/cleanflight-configurator/issues/313" target="_blank" rel="noopener noreferrer">https://github.com/cleanflight/cleanflight-configurator/issues/313</a></p>
+<p><code>set baro_hardware = 0</code> (default on), 1 = disabled<br>
+<i>[0,...,3] (from 2.4.0 [AUTO,NONE,...])</i></p>
+<p><code>set mag_hardware = 0</code> (default on), 1 = disabled<br>
+<i>[0,...,3] (from 2.4.0 [AUTO,NONE,...])</i></p>
+<p>set imu_dcm_kp = 2500<br>
+<i>[0,...,50000]</i></p>
+<p>set imu_dcm_ki = 0<br>
+<i>[0,...,50000]</i></p>
+<p>set enable_buzzer_p6 = OFF<br>
+<i>[OFF,ON]</i>
+Enables a lost buzzer on ESC Port 6 (CC3D only)</p>
+<p>set beeper_off_flags = 256<br>
+<i>[0,...,65535]</i></p>
+<p>beeper_off_flags = sum of each desired beeper turned off</p>
+<p>BEEPER<em>GYRO_CALIBRATED, 1
+BEEPER_RX_LOST_LANDING, 2 // Beeps SOS when armed and TX is turned off or signal lost (autolanding/autodisarm)
+BEEPER_RX_LOST, 4 // Beeps when TX is turned off or signal lost (repeat until TX is okay)
+BEEPER_DISARMING, 8 // Beep when disarming the board
+BEEPER_ARMING, 16 // Beep when arming the board
+BEEPER_ARMING_GPS_FIX, 32 // Beep a special tone when arming the board and GPS has fix
+BEEPER_BAT_CRIT_LOW, 64 // Longer warning beeps when battery is critically low (repeats)
+BEEPER_BAT_LOW, 128 // Warning beeps when battery is getting low (repeats)
+BEEPER</em>, 256 // when plugged into USB
+BEEPER_RX_SET, 512 // Beeps when aux channel is set for beep or beep sequence how many satellites has found if GPS enabled
+BEEPER_DISARM_REPEAT, 1024 // Beeps sounded while stick held in disarm position
+BEEPER_ACC_CALIBRATION, 2048 // ACC inflight calibration completed confirmation
+BEEPER_ACC_CALIBRATION_FAIL, 4096 // ACC inflight calibration failed
+BEEPER_READY_BEEP, 8192 // Ring a tone when GPS is locked and ready
+BEEPER_MULTI_BEEPS, 16384 // Internal value used by &#x27;beeperConfirmationBeeps()&#x27;.
+BEEPER_ARMED, 32768 // Warning beeps when board is armed (repeats until board is disarmed or throttle is increased)</p>
+<u>New in V2.5.0 Final</u>
+<p>The beeper off flags command is replaced by new textual representation using beeper command.
+Examples:
+To disable all beeper scenarios:</p>
+<h1>beeper -ALL</h1>
+<p>To enable all beeper scenarios:</p>
+<h1>beeper ALL</h1>
+<p>To disable beeping while USB is connected:</p>
+<h1>beeper -ON_USB</h1>
+<h1>beeper</h1>
+<p>beeper GYRO_CALIBRATED
+beeper RX_LOST
+beeper RX_LOST_LANDING
+beeper DISARMING
+beeper ARMING
+beeper ARMING_GPS_FIX
+beeper BAT_CRIT_LOW
+beeper BAT_LOW
+beeper GPS_STATUS
+beeper RX_SET
+beeper ACC_CALIBRATION
+beeper ACC_CALIBRATION_FAIL
+beeper READY_BEEP
+beeper MULTI_BEEPS
+beeper DISARM_REPEAT
+beeper ARMED
+beeper SYSTEM_INIT
+beeper ON_USB</p>
+<p>Note: A copy paste from the CLI does not work and gives &quot;Invalid&quot; due to too many spaces between &#x27;beeper&#x27; and the name. Just delete the extra space so there is only one space before hitting &#x27;enter&#x27;.</p>
+<p>set acc_lpf_hz = 20<br>
+<i>[0,...,200]</i>
+Accelerometer low pass filter. Decreasing the value might help with drift in horizon and level modes.</p>
+<p>set soft_gyro_lpf_hz = 60<br>
+<i>[0,...,255]</i>
+BiQuad Low pass filter for gyro. Works as a substitute for gyro_lpf, which is a hardware filter inside the gyro but can also work together with gyro_lpf. value of 60 gives around 20-25db reflection to frequencies above 200hz, which are usually motor/prop frequencies. The value of 60 should be fine on most multirotors. It may be possible that very noisy setups could benefit from lower values.</p>
+<p>set dterm_lpf_hz = 0<br>
+<i>[0,...,255]</i>
+Biquad low pass filter for D in hz. Should not be needed. Especially not from 2.3.4 versions.</p>
+<p><code>set acro_plus_factor = 30</code> Replaced with SUPER EXPO
+Range is 0-100. If set to anything other than 0 roll and pitch rates in the GUI will be ignored. RC rate and RC expo still apply. Warning 100 results in insane rolls and flips that may result in your inability to comprehend. Use at your own risk!</p>
+<p>See the &quot;What is Acro Plus&quot; topic on the Frequently Asked Questions page.</p>
+<p>set yaw_jump_prevention_limit = 200<br>
+<i>[80,...,500]</i><br>
+The maximum allowed P on Yaw stops....when stick centered basically.
+Description by Boris here: <a href="http://www.rcgroups.com/forums/showpost.php?p=33860926&amp;postcount=16558" target="_blank" rel="noopener noreferrer">http://www.rcgroups.com/forums/showpost.php?p=33860926&amp;postcount=16558</a></p>
+<p><strike>set delta_from_gyro = ON<br></strike>
+<strike><i>[OFF,ON]</i><br></strike>
+Description by ctzsnooze here: <a href="http://www.rcgroups.com/forums/showpost.php?p=33859758&amp;postcount=16547" target="_blank" rel="noopener noreferrer">http://www.rcgroups.com/forums/showpost.php?p=33859758&amp;postcount=16547</a>
+Also see &quot;The delta_from_gyro setting and all about the PID Controller D values&quot; on the &quot;Betaflight Deep Dive&quot; Wiki page and the &quot;How does yaw_jump_prevention_limit work ?&quot; in the FAQs.</p>
+<p>RC_smoothing = OFF<br>
+<i>[OFF,ON]</i><br></p>
+<p>This enables a running average of the RC commands (stick values from TX). If you see large steps in the rc command BlackBox traces which then cause jumps in the &#x27;P&#x27; and/or &#x27;D&#x27; traces enabling this will smooth these out.</p>
+<p>status<br></p>
+<p>The status command is used to give a brief overview of the health of the Flight Controller. One of the most useful readings is the CPU percentage.</p>
+<p>Here is an example output from the status command that shows the CPU at 100%
+This will more than likely mean the Flight Controller will not arm.</p>
+<p>System Uptime: 46 seconds, Voltage: 149 * 0.1V (4S battery - OK), CPU:100%
+CPU Clock=72MHz, GYRO=MPU6050, ACC=MPU6050.n, BARO=MS5611, MAG=HMC5883
+Cycle Time: 988, I2C Errors: 0, config size: 1316</p>
+<p>Here is another example output from the status command that shows the CPU at 37%
+This gives plenty of CPU head-room for other Flight Controller features to be enabled if desired.
+System Uptime: 104 seconds, Voltage: 1 * 0.1V (1S battery - NOT PRESENT), CPU:37%
+CPU Clock=72MHz, GYRO=MPU6500, ACC=MPU6500
+Cycle Time: 365, I2C Errors: 1, config size: 1316</p>
+<p>See the tasks command for details on how the CPU percentage usage can be lowered.</p>
+<p>tasks<br>
+Used in conjunction with the status command to determine the general health of the copter.
+Here is an example output that shows too many features running which will give rise to 100% CPU usage:
+Task list:
+0 - SYSTEM, max = 10 us, avg = 0 us, total = 1 ms
+1 - GYRO/PID, max = 1039 us, avg = 722 us, total = 19987 ms
+2 - ACCEL, max = 151 us, avg = 120 us, total = 672 ms
+3 - SERIAL, max = 141 us, avg = 2 us, total = 17 ms
+4 - BEEPER, max = 8 us, avg = 0 us, total = 2 ms
+5 - BATTERY, max = 40085 us, avg = 15 us, total = 51 ms
+6 - RX, max = 159 us, avg = 128 us, total = 205 ms
+7 - COMPASS, max = 160 us, avg = 124 us, total = 24 ms
+8 - BARO, max = 137 us, avg = 105 us, total = 183 ms
+10 - ALTITUDE, max = 281 us, avg = 163 us, total = 122 ms
+11 - DISPLAY, max = 130010 us, avg = 32784 us, total = 4391 ms</p>
+<p>If the CPU load is 100% then disable Magnetometer, Barometer, LEDstrip and Display then try again.</p>
+<p>Are you running LuxFloat? If so, change to MWREWRITE.</p>
+<p>Also reduce the amount of AUX channels to reduce time for task RX.</p>
+<p>Notes copied from Forum:</p>
+<ul>
+<li>
+<p>ATTITUDE is as it says acc calculations.</p>
+</li>
+<li>
+<p>ACCEL is only sampling of accelerometer and filtering and ATTITUDE is real processing of it, which doesnt have to be fast. 100hz is more than enough!</p>
+</li>
+<li>
+<p>When posting to the Forum please type &quot;version&quot;, &quot;status&quot; and &quot;tasks&quot; and post all three of these CLI outputs as well as which PIDC is used. Version is important since it shows What ßF version and processor binary (.hex or .bin) file was loaded.</p>
+</li>
+</ul>
+<u><i>New 2.4.0 CLI commands</i></u>
+<p>set pid_delta_method = MEASUREMENT<br>
+<i>[MEASUREMENT,ERROR]</i><br></p>
+<p>It&#x27;s the old _delta_from_gyro = OFF. Boris gave it a proper name.
+There is basically a choice between 2 types of delta</p>
+<p>set airmode_saturation_limit = 50</p>
+<p>Default value of 50 means that airmode will try to compensate at it&#x27;s best till 50% saturation. 0 means always maximum stabilization and 100 always limited. 0 is like version 2.3.3 and 2.3.4 and 100 would act same like pre 2.3.3 and like in 2.3.5.</p>
+<p>2.5.x has no limit (removed)....works as 2.3.3 and 2.3.4. There is just yaw_p_limit to prevent yaw domination.</p>
+<p>set gyro_sync_denom = 1</p>
+<p>For 2khz, set it = 4
+for 2.6khz, set it = 3
+for 4 khz, set it = 2 (iffy depending on ESCs, can be used with OneShot125 if Short Cal&#x27;ed or with MultiShot &amp; OneShot42)
+for 8 khz (not recommended) set it = 1 (Can be used if ESCs are running MutliShot or OneShot42)</p>
+<p>Denom is always a divider of the max loop rate (8khz). 4 means 8kHz /4 = 2khz. Loop time is the reciprocal (1/ Rate). Don&#x27;t forget to check CPU usage when playing with this value.
+It is highly recommended to use the &#x27;looptime&#x27; (in microSecond) box in the config GUI. This takes care of all the required settings.</p>
+<p>set vbat_pid_compensation = OFF<br>
+<i>[ON,OFF]</i><br></p>
+<p>Uses maximum cell voltage as an offset. Tune your quad with a full lipo and your pids will be scaled up to 25% when voltage gets lower.</p>
+<p>Also good when you have old and new lipos. The old ones with more voltage droop will automatically get more PID adjustments.
+It also disables itself when voltage completely drops below 2 cells.
+The cell count is calculated and the PID adjustments are based on the Cell voltage. Therefore moving from 3S to 4S is not a problem.</p>
+<p>Note: This requires VBAT connection on FC.</p>
+<p>set blackbox_device = SERIAL<br>
+<i>[SERIAL,SPIFLASH,SDCARD]</i><br></p>
+<p>New named values.</p>
+<p>set pid_controller = = MWREWRITE<br>
+<i>[MWREWRITE,LUX,MW23]</i><br></p>
+<p>New named values.
+Note: all other PIDCs have been removed.
+V2.4.0 has only MWREWRITE &amp; LUX
+MW23 is added back in V2.4.1</p>
+<u><i>New 2.4.1 RC2 CLI commands</i></u>
+<p>set dterm_average_count = 4</p>
+<p>averaging samples can now be configured for dterm to remove spiking.</p>
+<p>set acro_plus_offset = 40</p>
+<p>I brought back the normal rates in it. Reworked it with fixed point math, but now I also added acro_plus_offset. This is the breakpoint for acro plus. That means normal rates up to offset percentage of the stick output and after that the desired acro_plus_factor kicks in.</p>
+<p>Works really well!</p>
+<p>set max_aux_channels = 4 ?? <br>
+<i>[0,...,16]</i><br>
+Need to check what the default and maximum number of aux channels are.</p>
+<u><i>New 2.4.2 CLI commands</i></u>
+<p>serialpassthrough<br>
+<i>[id] [baud] [mode]</i><br>
+Serial data to port forwarding.
+UART1 - ID 0
+UART2 - ID 1
+UART3 - ID 2</p>
+<p>If your OSD is connected to UART2 with a baudrate of 57600 and you want to connect to it with your software enter this command:
+serialpassthrough 1 57600
+Then disconnect cleanflight configurator and connect your OSD Software to the com port.</p>
+<u><i>New 2.5.0 RC1 CLI commands</i></u>
+<p>Note: Use configurator to set looptime (in microSeconds) and all needed CLI values will be automatically set for proper operation.</p>
+<p>TODO
+add the new CLI commands/settings.</p>
+<p>set use_oneshot42 = OFF<br>
+<i>[OFF,ON]</i><br>
+Enable OneShot42. Feature OneShot125 must be active.</p>
+<p>set use_multishot = OFF<br>
+<i>[OFF,ON]</i><br>
+Enable MultiShot. Feature OneShot125 must be active.</p>
+<p>set sbus_inversion = OFF ?? <br>
+<i>[OFF,ON]</i><br>
+SBUS inversion ONLY ON F3 TARGETS.</p>
+<p>set frsky_vfas_cell_voltage = OFF ?? <br>
+<i>[OFF,ON]</i><br>
+Configurable VFAS cell voltage / battery voltage.</p>
+<u><i>New 2.5.01 RC2 CLI commands</i></u>
+<p>set forced_motor_pwm = OFF<br>
+<i>[OFF,ON]</i><br>
+Replaces set enable_fast_pwm. This is automatically set to proper values when LOOPTIME (microSeconds) is set using the Config GUI.
+Also see &quot;set motor_pwm_rate&quot; above.</p>
+<u>New 2.5.0 Final</u>
+<p>TODO
+Fill in the details of possible values and a description of what these do.</p>
+<p>set debug_mode = NONE<br>
+<i>[NONE,CYCLETIME,BATTERY,GYRO,ACCELEROMETER,MIXER,AIRMODE]</i><br>
+Enables display/logging of various debug information through the debug streams.<br>
+Data can be seen as Debug 0-3 in the Sensors tab and logs.<br></p>
+<p>set spektrum_sat_bind_autoreset = 1<br>
+<i>[1,??]</i><br></p>
+<p>set pid_process_denom = 1<br>
+<i>[1,...,8]</i><br>
+Determines PID and motor write frequency by dividing the gyro sample rate. This is automatically set to proper values when LOOPTIME (microSeconds) is set using the Config GUI.</p>
+<u>New in 2.5.3</u>
+<p>set yaw_p_limit = 300<br>
+<i>[100,...,300]</i><br>
+Sets the maximum allowed P on Yaw.</p>
+<u>New in 2.5.4</u>
+<p>set gyro_cal_on_first_arm = OFF<br>
+<i>[OFF,ON]</i><br>
+Forces a Gyro calibration upon Arming the first time after power up when set = ON.</p>
+<br>
+<br>
+<a name="v260"></a>
+<p><u><i>Changes in 2.6.0</i></u><br><br>
+<u>Removed:</u><br>
+set acro_plus_factor<br>
+set acro_plus_offset<br>
+set p_pitchf and all other float PID variables<br>
+set level_horizon<br>
+set level_angle<br></p>
+<br>
+<p><u>Changed:</u><br>
+set gyro_soft_lpf = 60 replaced with set gyro_lowpass_hz = 80<br>
+<i>[0,...,500]</i><br></p>
+<p>br/&gt;</p>
+<p>set dterm_lpf_hz = 0 replaced with set dterm_lowpass_hz = 70<br>
+<i>[0,...,500]</i><br></p>
+<p>br/&gt;</p>
+<p>set dterm_average_count = 4<br>
+New range: <i>[0,...,12]</i><br></p>
+<br>
+<p><u>Added:</u><br>
+escprog <i>[bl|sk] [#]</i><br><a name="escprog"></a>
+The first argument, <i>bl</i> or <i>sk</i>, is your ESC bootloader (bl for blheli or sk for simonk)<br>
+The second argument is the ESC number you wish to connect to.<br><br>
+You can connect the ESC power at any point.<br>
+Type the command, then disconnect or close the cleanflight configurator.<br>
+Now connect with BLHeliSuite using the appropriate (USB/Com) interface. (C or 1)<br>
+Atmel SK interface needs confirmed, but should be option 4 or 5.<br>
+After finishing with one ESC the board needs to be restarted before running the CLI command for the next ESC. This usually means unplugging both the battery and USB.<br></p>
+<p>set iterm_reset_degrees = 200<br>
+<i>[50,...,1000]</i><br>
+Experimental threshold for resetting iterm for pitch and roll on certain rates<br></p>
+<br>
+<p>set super_expo_factor = 30<br>
+<i>[1,...,100]</i><br>
+Super Expo Factor<br></p>
+<br>
+<p>set vbat_hysteresis = 1<br>
+<i>[0,...,250]</i><br>
+Hysteresis for alarm, default 1 = 0.1V<br></p>
+<br>
+<p>set yaw_iterm_reset_degrees = 50<br>
+<i>[25,...,1000]</i><br>
+Experimental threshold for resetting iterm for yaw on certain rates<br></p>
+<br>
+<p>set yaw_lowpass_hz = 70<br>
+<i>[0,...,500]</i><br>
+Additional yaw filter when yaw axis too noisy<br></p>
+<br>
+<br>
+<a name="v261"></a>
+<p><u><i>Changes in 2.6.1</i></u><br><br>
+<u>Removed:</u><br>
+escprog <i>[bl|sk] [#]</i><br><a name="escprog"></a></p>
+<br>
+<br>
+<a name="v270"></a>
+<u><i>Changes in 2.7.0</i></u>
+<br>
+<br>
+<br>
+<p>set super_expo_factor_yaw = 30 <br>
+<i>[1-100]</i><br></p>
+<br>
+<p>set super_expo_yaw = OFF<br>
+<i>[OFF,ON,ALWAYS]</i><br></p>
+<br>
+<p>set iterm_always_reset = OFF<br>
+<i>[OFF,ON]</i><br>
+Optional Iterm reset option even without super expo</p>
+<br>
+<p>set unsynced_fast_pwm = OFF<br>
+<i>[ON,OFF]</i><br>
+unsynced motor update speeds for fast PWM protocols up to 32k with<br>
+<!-- -->Set motor_pwm_rate = [0-32000]
+(Oneshot125 not over 4000, os42 not over 12000, ms right up to 32k)</p>
+<br>
+<p>set fast_pwm_protocol = ONESHOT125<br>
+<i>[ONESHOT125,ONESHOT42,MULTISHOT]</i><br>
+configuring fast PWM protocols</p>
+<p><i>Replaced use_Multishot and use_oneshot42.</i><br>
+<!-- -->Note: &#x27;feature oneshot125&#x27; must be enabled to use any of these fast pwm protocols.</p>
+<br>
+<p>set iterm_reset_offset = 15<br>
+<i>[0-100]</i><br>
+Configurable Iterm reset offset</p>
+<br>
+<br>
+<a name="v280"></a>
+<u><i>Changes in 2.8.0</i></u>
+<br>
+<br>
+<p>TODO - add new CLI comands with explainations</p>
+<br>
+<p>set airmode_activate_throttle = 1350<br>
+<i>[1000-2000]</i><br>
+This keeps AirMode OFF until the the first time throttle reaches this value. AirMode is always on after this.
+Note that 3D users have to reconfigure their threshold to something else otherwise airmode would be always enabled.</p>
+<br>
+<p>set iterm_reset is REMOVED<br></p>
+<br>
+<p>set anti_desync_power_step = 10000<br>
+<i>[0-10000]</i><br>
+The default is set to the maximum ESC throttle change. Decrease until desync no longer happen.</p>
+<p>Boris noted: For those who have desync issues might try this. Very curious if this can help ESCs in some situation with hard quick motor jumps from pid controller. I flew it and it flew quite well.<br>
+<!-- -->I was analysing some of the logs from folks who had desyncs or unwanted rolls or flips. In 100% of cases desync happened when PID controller was doing abrupt throttle changes. Like for example after roll or flip where the quad needs to get stopped motors would shortly pulse up and down. That abrupt stepping can now be controlled with this feature. The ESC&#x27;s have the most difficulty with quick changing RPM&#x27;s.<br>
+<!-- -->This is working directly on the motor output. It is basically the maximum allowed throttle change within 1ms.
+100 means 100 throttle steps per millisecond.</p>
+<p>From powdermnky007<br>
+<!-- -->I saw Boris set the desync prevention thing down to 100, so if 1000 still desyncs (it probably will) drop down to 500, 250, 100 etc.</p>
+<p>Make big jumps until you fix it, then work your way back up slowly.</p>
+<br>
+<p>set d_yaw = 20<br>
+<i>[0-200]</i><br>
+As per release notes this now is what sets the yaw_jump_prevention_limit.
+Boris noted: Yes 0 yaw D is 400 actually. Which might be too much in most times.<br>
+<!-- -->1 D step equals to 8 steps in yaw_jump_prevention reduction<br>
+<!-- -->D of 20: 400 - 160 = 240. (400 - d_yaw *8)</p>
+<p>Increasing Yaw D reduces the yaw_jump_prevention_limit, which is a limit on motor power during yaw movements.
+Hence higher yaw D numbers mean less &#x27;jump&#x27; and a reduction in the maximum possible yaw rate.</p>
+<br>
+<p>set ledstrip_visual_beeper = OFF<br>
+<i>[ON,OFF]</i><br></p>
+<br>
+<p>set iterm_ignore_threshold = 900<br>
+<i>[50-1000]</i><br></p>
+<br>
+<p>set yaw_iterm_ignore_threshold = 35<br>
+<i>[25-1000]</i><br></p>
+<p>ctzsnooze describes these two settings:
+Both &quot;iterm_ignore_threshold&quot; and &quot;yaw_iterm_ignore_threshold&quot; parameters modify iTerm behavior during fast stick inputs. When intended turn rate is zero, e.g. while hovering or in stable FFF, iTerm is &#x27;normal&#x27; - set by PID I alone - because iTerm accumulates &#x27;normally&#x27;. As intended turn rate (set in acro by stick angle) approaches the term_ignore_threshold value, iTerm accumulation is decreased until it is zero at, and above, the item_ignore value.</p>
+<p>Note that with this system iTerm accumulation during uncommanded events (wind, impact, etc) is always &#x27;normal&#x27; - the attenuation occurs only during commanded inputs.</p>
+<p>The intent is to smoothly reduce inputs to iTerm at high commanded turn rates, e.g. during flips and rolls, so that we minimise unwanted iTerm accumulation, which we know can cause bounce back or instability immediately we stop the flip or roll.</p>
+<p>A higher threshold value allows more iTerm accumulation during high roll rate commands, and vice versa.</p>
+<p>If the threshold is too low, a quick push forward on the stick may not accumulate enough iTerm to lock the new desired angle. If that happens, consider increasing the threshold.</p>
+<p>A combination of a lower threshold and a higher PID I value may be useful if you want more I to deal with really windy days (i.e. to manage low amplitude relatively low frequency uncommanded inputs more aggressively) but you don&#x27;t want or are getting excessive I effects during commanded flips, rolls etc. The default value of 200 seems about right, however at this point in time the optimal value is not known with great certainty.</p>
+<br>
+<strike>&#x27;set dynamic_pid = ON&#x27;<br>
+<i>[ON,OFF]</i><br></strike>
+<ul>
+<li>removed in 3.0.0</li>
+</ul>
+<br>
+<p>set fast_pwm_protocol = ONESHOT125<br>
+<i>[ONESHOT125,ONESHOT42,MULTISHOT,OFF]</i><br>
+set fast_pwm_protocol = off for brushed or normal pwm in 2.8</p>
+<br>
+<p>feature -SUPEREXPO_RATES<br>
+Disables the Super Expo feature.
+This will allow the old rates and Expos.</p>
+<br>
+<p>feature -AIRMODE<br>
+Disables the Air Mode feature.</p>
+<br>
+<p>set rc_rate_yaw = 0<br>
+<i>[0-1.0??]</i><br></p>
+<br>
+<p>set ledstrip_visual_beeper = OFF<br>
+<i>[ON,OFF]</i><br>
+When set to on, and the LEDLOW mode is active (i.e. LED strip off), blink the LED strip in synch with beeping, as a visual indicator in cases where the craft is too far away for the beeper to be heard / multiple craft are flying.</p></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/category/archive"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Archive</div></a><a class="pagination-nav__link pagination-nav__link--next" href="/docs/wiki/guides/archive/Betaflight-Merchandise"><div class="pagination-nav__sublabel">Next</div><div class="pagination-nav__label">Official Betaflight T-Shirts and Hoodies!</div></a></nav></div></div></div></div></main></div></div></div><footer class="p-16 w-full bg-neutral-500/5 shadow-[0_20px_30px_0] shadow-black"><div class="text-center"><div class="grid grid-cols-2 md:grid-cols-4 gap-4"><div><div class="font-bold text-primary-600 mb-1">Youtube</div><ul class="flex flex-col items-center"><li><a href="https://www.youtube.com/channel/UCX3eufnI7A2I7IkKHZn8KSQ" target="_blank" rel="noopener noreferrer" class="fancy-link pb-1 no-underline flex"><div class="w-[24px] self-center"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" class="svg-inline--fa fa-youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></div>Joshua Bardwell</a></li><li><a href="https://www.youtube.com/channel/UCQtdpSBYlsWH6_m1Us_d8dg" target="_blank" rel="noopener noreferrer" class="fancy-link pb-1 no-underline flex"><div class="w-[24px] self-center"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube" class="svg-inline--fa fa-youtube" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></div>Ivan Efimov</a></li></ul></div><div><div class="font-bold text-primary-600 mb-1">Links</div><ul class="flex flex-col items-center"><li><a href="https://oscarliang.com/" target="_blank" rel="noopener noreferrer" class="fancy-link pb-1 no-underline flex"><div class="w-[24px] self-center"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="globe" class="svg-inline--fa fa-globe" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"></path></svg></div>Oscar Liang</a></li><li><a href="https://www.vitroidfpv.com/" target="_blank" rel="noopener noreferrer" class="fancy-link pb-1 no-underline flex"><div class="w-[24px] self-center"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="globe" class="svg-inline--fa fa-globe" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.2-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64H348.7c2.2 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.7 142 77.5 171.9 151.6zm-149.1 0H167.7c6.1-36.4 15.5-68.6 27-94.7c10.5-23.6 22.2-40.7 33.5-51.5C239.4 3.2 248.7 0 256 0s16.6 3.2 27.8 13.8c11.3 10.8 23 27.9 33.5 51.5c11.6 26 20.9 58.2 27 94.7zm-209 0H18.6C48.6 85.9 112.2 29.1 190.6 8.4C165.1 42.6 145.3 96.1 135.3 160zM8.1 192H131.2c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zM194.7 446.6c-11.6-26-20.9-58.2-27-94.6H344.3c-6.1 36.4-15.5 68.6-27 94.6c-10.5 23.6-22.2 40.7-33.5 51.5C272.6 508.8 263.3 512 256 512s-16.6-3.2-27.8-13.8c-11.3-10.8-23-27.9-33.5-51.5zM135.3 352c10 63.9 29.8 117.4 55.3 151.6C112.2 482.9 48.6 426.1 18.6 352H135.3zm358.1 0c-30 74.1-93.6 130.9-171.9 151.6c25.5-34.2 45.2-87.7 55.3-151.6H493.4z"></path></svg></div>VitroidFPV</a></li></ul></div><div><div class="font-bold text-primary-600 mb-1">Community</div><ul class="flex flex-col items-center"><li><a href="https://discord.betaflight.com/invite" target="_blank" rel="noopener noreferrer" class="fancy-link pb-1 no-underline flex"><div class="w-[24px] self-center"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="discord" class="svg-inline--fa fa-discord" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"></path></svg></div>Discord</a></li><li><a href="https://intofpv.com/" target="_blank" rel="noopener noreferrer" class="fancy-link pb-1 no-underline flex"><div class="w-[24px] self-center"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="comments" class="svg-inline--fa fa-comments" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M208 352c114.9 0 208-78.8 208-176S322.9 0 208 0S0 78.8 0 176c0 38.6 14.7 74.3 39.6 103.4c-3.5 9.4-8.7 17.7-14.2 24.7c-4.8 6.2-9.7 11-13.3 14.3c-1.8 1.6-3.3 2.9-4.3 3.7c-.5 .4-.9 .7-1.1 .8l-.2 .2 0 0 0 0C1 327.2-1.4 334.4 .8 340.9S9.1 352 16 352c21.8 0 43.8-5.6 62.1-12.5c9.2-3.5 17.8-7.4 25.3-11.4C134.1 343.3 169.8 352 208 352zM448 176c0 112.3-99.1 196.9-216.5 207C255.8 457.4 336.4 512 432 512c38.2 0 73.9-8.7 104.7-23.9c7.5 4 16 7.9 25.2 11.4c18.3 6.9 40.3 12.5 62.1 12.5c6.9 0 13.1-4.5 15.2-11.1c2.1-6.6-.2-13.8-5.8-17.9l0 0 0 0-.2-.2c-.2-.2-.6-.4-1.1-.8c-1-.8-2.5-2-4.3-3.7c-3.6-3.3-8.5-8.1-13.3-14.3c-5.5-7-10.7-15.4-14.2-24.7c24.9-29 39.6-64.7 39.6-103.4c0-92.8-84.9-168.9-192.6-175.5c.4 5.1 .6 10.3 .6 15.5z"></path></svg></div>IntoFPV</a></li></ul></div><div><div class="font-bold text-primary-600 mb-1">More</div><ul class="flex flex-col items-center"><li><a class="fancy-link pb-1 no-underline flex" href="/blog"><div class="w-[24px] self-center"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="blog" class="svg-inline--fa fa-blog" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M192 32c0 17.7 14.3 32 32 32c123.7 0 224 100.3 224 224c0 17.7 14.3 32 32 32s32-14.3 32-32C512 128.9 383.1 0 224 0c-17.7 0-32 14.3-32 32zm0 96c0 17.7 14.3 32 32 32c70.7 0 128 57.3 128 128c0 17.7 14.3 32 32 32s32-14.3 32-32c0-106-86-192-192-192c-17.7 0-32 14.3-32 32zM96 144c0-26.5-21.5-48-48-48S0 117.5 0 144V368c0 79.5 64.5 144 144 144s144-64.5 144-144s-64.5-144-144-144H128v96h16c26.5 0 48 21.5 48 48s-21.5 48-48 48s-48-21.5-48-48V144z"></path></svg></div>Blog</a></li><li><a href="https://github.com/betaflight/betaflight" target="_blank" rel="noopener noreferrer" class="fancy-link pb-1 no-underline flex"><div class="w-[24px] self-center"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></div>GitHub</a></li></ul></div></div></div><div class="text-center"><svg baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" width="201.7" height="159.2" viewBox="0 0 201.7 159.2" xml:space="preserve" class="w-36 h-36 mr-12 mt-4 inline-block opacity-10"><path fill="#FFF" d="M159.8 125.4c-15.2-6.4-26-15.9-36.9-20 5.7-2.5 11-6.1 14.3-9.2 3.6-3.4 4.7-7.7 4.5-11.8 11.3 7.7 24.7 8.2 31.5 8.6 7.1.4 13.8 1.8 15.2 5.2 0 0 2.2-38.4-76.9-63.9 0 0 23.6 10.7 31 19.3 0 0-8.4-.5-11.9 4.9-1.8 2.7-2.2 6.9-.6 11.5-1.3-.2-2.8-.4-4.4-.5L0 0l13.2 28.4L.8 24.1l3.7 7c.1.1 5.2 10 17.3 31.1 9.5 16.6 26.5 24.9 49 23.9.8 0 1.8-.1 2.8-.2 5.7-.4 14.5-1.2 23-2-.6 3.1-.5 6.8.3 11.3 1 5.2 3.1 8.5 5.8 10.6-6.7 3.2-12.8 9.4-15.5 16.8-1.9 4.6-2.4 10.2-.1 16.7v.1c.5 1.3 1 2.6 1.8 4 .7 1.3 1.6 2.6 2.7 3.7 14 16.6 48 13.9 69.4 4.9.3-.1.6-.2.9-.4 1.7-.7 3.4-1.5 5.1-2.3.3-.2.7-.3 1-.5 1.8-.9 3.6-1.8 5.4-2.9 21.3-12.4 28.3-26.9 28.3-26.9s-21.3 15.1-41.9 6.4zm5.4-57c6 2.6 15.3 17.6 15.3 17.6-7.7-1.2-23.1-6.2-24.7-12s3.4-8.3 9.4-5.6zm-19.8 74.4s1.6 5-.3 11.5c-2.1.6-4.4 1.1-6.7 1.5 3.7-2.8 7-7 7-13zM41.7 46.7l54.5 31c-10 1-20.6 1.9-25.9 2.2-8.1.4-15.4-.6-21.8-2.8C39.2 73.8 32 67.8 27 59.2c-6.2-10.8-10.5-18.7-13.3-23.8L25 39.3 13.7 15l99.1 55c-2.7.4-5.4 1.2-7.8 2.4L41.7 46.7zm57.9 38.7c3.9-18.4 27.5-12.6 27.5-12.6-8.6-.2-13.6 2.2-16.1 5.6-3.7 5.1.9 9 .9 9-1.3-.2-2.4-.6-3.2-1.2v.2c2 7.1 7.8 9 7.8 9-2.2.3-4.1.2-5.7-.2 1.3 3 3 5.2 4.2 5.7-5.2 0-7.9 1.2-9.9 2-4.1-2.8-7.2-9.5-5.5-17.5zm16.2 40.3s-8.6 10.7-27 10.7c-1.1-4.2-.7-8.4.3-12.1 5.8 3.8 14.6 6 26.7 1.4zm-15.6 24.9c7.9-1.8 18-6.2 27.6-17.1 0 0-1.1 11.8-10 23-4-.5-8.1-1.5-12-3.1-2-.8-3.9-1.8-5.6-2.8zm74.4-9.6c-1.1-2.9-1.6-8.7-1.6-8.7 6.6.6 14.6-2.1 14.6-2.1-5.3 6.5-13 10.8-13 10.8z"></path></svg><div class="footer__copyright">Copyright © 2023 All rights reserved Team Betaflight</div><div class="mt-1 text-sm text-neutral-500/60">Built with Docusaurus</div><div class="mt-1 text-sm text-neutral-500/60">made with <span class="text-red-500">❤️</span> by<!-- --> <a class="font-bold hover:text-emerald-500 no-underline duration-300" href="https://github.com/vitroidfpv">VitroidFPV</a> <!-- -->and<!-- --> <a class="font-bold hover:text-sky-400 no-underline duration-300" href="https://github.com/freasy">un!t</a></div></div></footer></div>
+</body>
+</html>
