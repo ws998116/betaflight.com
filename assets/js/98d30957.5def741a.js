@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[6384],{87219:s=>{s.exports=JSON.parse('{"title":"Boards","slug":"/category/boards","permalink":"/docs/category/boards","navigation":{"previous":{"title":"Modes Tab","permalink":"/docs/wiki/configurator/modes-tab"},"next":{"title":"Aikon F4","permalink":"/docs/wiki/boards/AIKONF4"}}}')}}]);
